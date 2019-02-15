@@ -1,0 +1,133 @@
+.table_2048{
+    border-collapse: collapse;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.table_2048 th, td{
+
+    padding: 5px;
+    text-align: center;
+    color: black;
+    font-family: courier, courier new, serif;;
+    font-size: 40px;
+    background-color: aliceblue;
+    border: 1px solid #000;
+    height: 80px;
+    width: 80px;
+}
+
+.button_2048{
+    height: 60px;
+    width: 60px;
+    background-color: aliceblue;
+    border-collapse: collapse;
+    border: 1px solid #f0f8ff;
+}
+
+.restart_button_2048{
+    position:absolute;
+    transition: .5s ease;
+    top: 45%;
+    left: 65%;
+
+    padding: 5px;
+    text-align: center;
+    color: aliceblue;
+    font-family: courier, courier new, serif;
+    font-size: 25px;
+    background-color: black;
+    border: 1px solid #f0f8ff;
+    height: 70px;
+    width: 120px;
+}
+
+.label_username{
+    position:absolute;
+    transition: .5s ease;
+    top: 20%;
+    left: 15%;
+
+    color: aliceblue;
+    font-family: courier, courier new, serif;
+    font-size: 25px;
+}
+
+.textField_username{
+    position:absolute;
+    transition: .5s ease;
+    top: 25%;
+    left: 15%;
+}
+
+.button_submit{
+    position:absolute;
+    transition: .5s ease;
+    top: 30%;
+    left: 15%;
+
+    padding: 5px;
+    text-align: center;
+    color: aliceblue;
+    font-family: courier, courier new, serif;
+    font-size: 20px;
+    background-color: black;
+    border: 1px solid #f0f8ff;
+    height: 40px;
+    width: 100px;
+}
+
+.label_score{
+    position:absolute;
+    transition: .5s ease;
+    top: 5%;
+    left: 65%;
+
+    color: aliceblue;
+    font-family: courier, courier new, serif;
+    font-size: 25px;
+}
+
+.label_scoreValue{
+    position:absolute;
+    transition: .5s ease;
+    top: 10%;
+    left: 65%;
+
+    color: aliceblue;
+    font-family: courier, courier new, serif;
+    font-size: 25px;
+}
+
+.label_start{
+    position:absolute;
+    transition: .5s ease;
+    top: 40%;
+    left: 15%;
+
+    color: aliceblue;
+    font-family: courier, courier new, serif;
+    font-size: 20px;
+}
+
+.label_end{
+     position:absolute;
+     transition: .5s ease;
+     top: 20%;
+     left: 65%;
+
+     color: aliceblue;
+     font-family: courier, courier new, serif;
+     font-size: 25px;
+ }
+
+.label_end2{
+    position:absolute;
+    transition: .5s ease;
+    top: 25%;
+    left: 65%;
+
+    color: aliceblue;
+    font-family: courier, courier new, serif;
+    font-size: 25px;
+}

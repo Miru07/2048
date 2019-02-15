@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+      <h:head>
+         <title>2048</title>
+         <link rel="icon" href="http://icons.iconarchive.com/icons/shaunkleyn/phlat-blue-folders/512/Games-icon.png" type="image/x-icon"/>
+         <h:outputStylesheet library="css" name="table-style.css"/>
+      </h:head>
+      <h:body style="background-color: black; text-align: center; color: white">
+
+
+          <h:form>
+
+            <h:dataTable id="table" value="#{myBean.getListOfValues()}" var="boardVal" cellpadding="5" cellspacing="3"
+               styleClass="table_2048">
+               <h:column>
+                  #{boardVal.get(0)}
+               </h:column>
+               <h:column>
+                  #{boardVal.get(1)}
+               </h:column>
+               <h:column>
+                  #{boardVal.get(2)}
+               </h:column>
+               <h:column>
+                  #{boardVal.get(3)}
+               </h:column>
+            </h:dataTable>
+
+            <f:view>
+
+                <h:outputLabel styleClass="label_username" for="username">Username: </h:outputLabel>
+                <h:inputText styleClass="textField_username" id="username" value="#{myBean.username}"/>
+                <h:commandButton styleClass="button_submit" value = "Start" action="#{myBean.startGame()}"/>
+                <h:outputLabel id="startMsg" styleClass="label_start" value="#{myBean.getStartMessage()}"/>
+
+                <h:outputLabel styleClass="label_score">Score: </h:outputLabel>
+                <h:outputLabel id="score" styleClass="label_scoreValue" value="#{myBean.getScore()}"/>
+
+                <h:outputLabel id="endMsg" styleClass="label_end" value="#{myBean.getEndMessage()}" />
+                <h:outputLabel id="endMsg2" styleClass="label_end2" value="#{myBean.getScoreMessage()}" />
+
+                <br/>
+                <h:commandButton styleClass="button_2048" action="#{myBean.up}" image="resources/css/image/up.png" update="score, startMsg, endMsg, endMsg2">
+
+                </h:commandButton>
+                <br/>
+                <h:commandButton styleClass="button_2048" value="Left" action="#{myBean.right}" image="resources/css/image/left.png" update="score, startMsg, endMsg, endMsg2"/>
+
+                <h:commandButton styleClass="button_2048" value="Down" action="#{myBean.down}" image="resources/css/image/down.png" update="score, startMsg, endMsg, endMsg2"/>
+
+               <h:commandButton styleClass="button_2048" value="Right" action="#{myBean.left}" image="resources/css/image/right.png" update="score, startMsg, endMsg,endMsg2"/>
+                <br/>
+                (Play using arrow keys or the buttons)
+
+               <h:commandButton  styleClass="restart_button_2048" value="Restart" action="#{myBean.clearBoard}" update="score, startMsg, endMsg, endMsg2"/>
+
+                <p:hotkey bind="Up" actionListener="#{myBean.up}" update="table, score, startMsg, endMsg, endMsg2"/>
+                <p:hotkey bind="Down" actionListener="#{myBean.down}" update="table, score, startMsg, endMsg, endMsg2"/>
+                <p:hotkey bind="Left" actionListener="#{myBean.right}" update="table, score, startMsg, endMsg, endMsg2"/>
+                <p:hotkey bind="Right" actionListener="#{myBean.left}" update="table, score, startMsg, endMsg, endMsg2"/>
+                <p:hotkey bind="Enter" actionListener="#{myBean.startGame}" update="table, score, startMsg, endMsg, endMsg2"/>
+
+            </f:view>
+
+         </h:form>
+      </h:body>
+</html>
